@@ -18,7 +18,7 @@ function FormExample() {
             nome: nome,
             cognome: cognome,
         }
-        axios.post("http://localhost:3001/create",{
+        axios.post("https://pokemonuniteonlinedb.herokuapp.com/create",{
             nome:nome, 
             cognome:cognome
         });
