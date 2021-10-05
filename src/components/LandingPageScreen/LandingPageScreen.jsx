@@ -5,12 +5,14 @@ import GoogleLogin from "react-google-login";
 
 function LandingPageScreen() {
 
-    const responseGoogleSuccess = () => {
+    const responseGoogleSuccess = (response) => {
         console.log("Loggato!");
+        console.log(response);
     }
 
-    const responseGoogleFailure = () => {
+    const responseGoogleFailure = (response) => {
         console.log("Fallito!");
+        console.log(response);
     }
 
     return (
