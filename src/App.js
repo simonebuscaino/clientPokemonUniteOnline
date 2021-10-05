@@ -6,7 +6,7 @@ import LandingPageScreen from './components/LandingPageScreen/LandingPageScreen'
 function App() {
   return (
     <div className="App">
-      eccomi
+      <LandingPageScreen/>
     </div>
   );
 }
