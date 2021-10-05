@@ -17,10 +17,10 @@ function LandingPageScreen() {
     const responseGoogleSuccess = (response) => {
         setUserDetail({
             logged: true,
-            firstname: response.profileObj.GU,
-            lastname: response.profileObj.XS,
-            fullname: response.profileObj.Re,
-            email: response.profileObj.St,
+            firstname: response.profileObj.givenName,
+            lastname: response.profileObj.familyName,
+            fullname: response.profileObj.name,
+            email: response.profileObj.email,
             image: response.profileObj.imageUrl,
         });
         console.log("Loggato!");
