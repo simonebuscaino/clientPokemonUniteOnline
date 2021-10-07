@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
-import GoogleLogin from "react-google-login";
+import {GoogleLogin, useGoogleLogin, isLoggedIn} from "react-google-login";
 
 function LandingPageScreen() {
 
@@ -14,6 +14,8 @@ function LandingPageScreen() {
         image: "",
     });
 
+    //   console.log(signIn);
+    console.log(isLoggedIn);
     const responseGoogleSuccess = (response) => {
         setUserDetail({
             logged: true,
@@ -57,7 +59,7 @@ function LandingPageScreen() {
                             onSuccess={responseGoogleSuccess}
                             onFailure={responseGoogleFailure}
                             cookiePolicy={'single_host_origin'}
-                            isLoggedIn={true}
+                            // isLoggedIn={true}
                         />
                         :
                         <b>Benvenuto {userDetail.fullname}!</b>
