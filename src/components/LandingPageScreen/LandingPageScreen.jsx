@@ -57,6 +57,7 @@ function LandingPageScreen() {
                             onSuccess={responseGoogleSuccess}
                             onFailure={responseGoogleFailure}
                             cookiePolicy={'single_host_origin'}
+                            isLoggedIn={true}
                         />
                         :
                         <b>Benvenuto {userDetail.fullname}!</b>
