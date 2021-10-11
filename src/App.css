@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+
+.containerHeader {
+  padding-left: 90px;
+  background-color: rgb(1, 51, 102);
+  color: white;
+  min-height: 40px;
+  height: 54px;
+  align-items:baseline;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.containerNavbar {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  background-color: rgb(0, 87, 173);
+  color: white;
+  align-items: center;
+  min-height: 60px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.containerBody {
+  padding: 100px !important;
+  min-height: calc(100vh - 350px) !important;
+}
+
+.containerFooter {
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: rgb(48, 55, 61);
+  color: white;
+  align-items: center;
+  min-height: 200px;
+  height: 300px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

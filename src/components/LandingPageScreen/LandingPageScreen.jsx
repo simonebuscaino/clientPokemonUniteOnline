@@ -6,12 +6,16 @@ import { useGlobalContext } from "../../context";
 import LoginGoogle from "../common/LoginGoogle/LoginGoogle";
 import LogoutGoogle from "../common/LogoutGoogle/LogoutGoogle";
 import {useHistory} from "react-router-dom";
+import { useGoogleAuth } from "../common/authGoogle";
 
 function LandingPageScreen() {
 
     const {userDetail} = useGlobalContext();
     const historyRouter = useHistory();
     console.log(userDetail);
+
+    const {isSignedIn} = useGoogleAuth();
+
     return (
         <Container fluid>
             <Row>
@@ -22,7 +26,7 @@ function LandingPageScreen() {
             <Row>
                 <Col>
                 {
-                    !userDetail.logged ?
+                    !isSignedIn ?
                         <LoginGoogle/>
                     :
                         historyRouter.push("/home")

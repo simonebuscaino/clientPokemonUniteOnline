@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {AppProvider} from "./context";
+import { GoogleAuthProvider } from './components/common/authGoogle';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
+    <GoogleAuthProvider>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </GoogleAuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

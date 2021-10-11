@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {GoogleLogin, GoogleLogout} from "react-google-login";
 import { useGlobalContext } from "../../../context";
+import { useGoogleAuth } from "../authGoogle";
 
 function LoginGoogle() {
 
@@ -37,14 +38,17 @@ function LoginGoogle() {
         console.log(response);
     }
 
+    const {signIn} = useGoogleAuth();
+
     return (
-        <GoogleLogin
-            clientId="440837109818-j1blm29hcorg605h8ji88iacdpphscts.apps.googleusercontent.com"
-            buttonText="Login"
-            onSuccess={responseGoogleLoginSuccess}
-            onFailure={responseGoogleLoginFailure}
-            cookiePolicy={'single_host_origin'}
-        />
+        // <GoogleLogin
+        //     clientId="440837109818-j1blm29hcorg605h8ji88iacdpphscts.apps.googleusercontent.com"
+        //     buttonText="Login"
+        //     onSuccess={responseGoogleLoginSuccess}
+        //     onFailure={responseGoogleLoginFailure}
+        //     cookiePolicy={'single_host_origin'}
+        // />
+        <Button variant="primary" onClick={signIn}>Accedi con Google</Button>
     );
   }
 

@@ -9,20 +9,15 @@ import {
   Link
 } from "react-router-dom";
 import HomeScreen from './components/HomeScreen/HomeScreen';
+// import { Navbar } from 'react-bootstrap';
+import NavbarScreen from './components/NavbarScreen/NavbarScreen';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Landing Page</Link>
-            </li>
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
-          </ul>
+
+          <NavbarScreen/>
 
           <hr />
 
@@ -37,7 +32,6 @@ function App() {
             <Route exact path="/" component={LandingPageScreen}/>
             <Route exact path="/home" component={HomeScreen}/>
           </Switch>
-        </div>
       </Router>
     </div>
   );
