@@ -11,7 +11,7 @@ function LandingPageScreen() {
 
     const {userDetail} = useGlobalContext();
     const historyRouter = useHistory();
-
+    console.log(userDetail);
     return (
         <Container fluid>
             <Row>
