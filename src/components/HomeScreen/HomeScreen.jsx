@@ -7,6 +7,7 @@ import LoginGoogle from "../common/LoginGoogle/LoginGoogle";
 import LogoutGoogle from "../common/LogoutGoogle/LogoutGoogle";
 import {useHistory} from "react-router-dom";
 import { useGoogleAuth } from "../common/authGoogle";
+import Lobby from "./Lobby/Lobby";
 
 function HomeScreen() {
 
@@ -26,6 +27,7 @@ function HomeScreen() {
                                     <h1>{googleUser.profileObj.name}</h1>
                                     <img src={googleUser.profileObj.imageUrl} alt="Avatar." />
                                     <LogoutGoogle/>
+                                    <Lobby/>
                                 </>
                             :
                                 historyRouter.push("/")
