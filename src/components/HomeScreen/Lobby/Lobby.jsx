@@ -17,16 +17,16 @@ function HomeScreen() {
 
 
     return (
-        <Card style={{ width: '100%' }}>
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-                </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+        <Card className="mb-3">
+            <Card.Body as={Row}>
+                <Col md="10" lg="9">
+                    <Card.Title>Nome Lobby</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Pubblico</Card.Subtitle>
+                    <Card.Text>4 posti disponibili</Card.Text>
+                </Col>
+                <Col md="4" lg="3" className="d-grid">
+                    <Button variant="primary">Accedi</Button>
+                </Col>
             </Card.Body>
         </Card>
     );

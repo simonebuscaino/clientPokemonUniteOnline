@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import FormExample from './components/Form/Form';
+// import FormExample from './components/Form/Form';
 import LandingPageScreen from './components/LandingPageScreen/LandingPageScreen';
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
 import HomeScreen from './components/HomeScreen/HomeScreen';
 // import { Navbar } from 'react-bootstrap';
 import NavbarScreen from './components/NavbarScreen/NavbarScreen';
+import NewLobbyScreen from './components/NewLobbyScreen/NewLobbyScreen';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={LandingPageScreen}/>
             <Route exact path="/home" component={HomeScreen}/>
+            <Route exact path="/newLobby" component={NewLobbyScreen}/>
           </Switch>
       </Router>
     </div>

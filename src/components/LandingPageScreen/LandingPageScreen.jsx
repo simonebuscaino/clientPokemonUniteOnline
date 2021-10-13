@@ -17,7 +17,7 @@ function LandingPageScreen() {
     const {isSignedIn} = useGoogleAuth();
 
     return (
-        <Container fluid>
+        <Container className="containerBody" style={{textAlign:"center"}} fluid>
             <Row>
                 <Col>
                     <img src="https://cdn2.bulbagarden.net/upload/0/0d/Pok%C3%A9mon_UNITE_logo.png" width="300px" height="auto" alt="" />
