@@ -12,29 +12,27 @@ import HomeScreen from './components/HomeScreen/HomeScreen';
 // import { Navbar } from 'react-bootstrap';
 import NavbarScreen from './components/NavbarScreen/NavbarScreen';
 import NewLobbyScreen from './components/NewLobbyScreen/NewLobbyScreen';
+import { useGoogleAuth } from "./components/common/authGoogle";
+import {useHistory} from "react-router-dom";
+import RouterPage from './components/common/RouterPage/RouterPage';
+
+
 
 function App() {
+
+  const {isSignedIn, googleUser} = useGoogleAuth();
+  const historyRouter = useHistory();
+
   return (
     <div className="App">
-      <Router>
-
-          <NavbarScreen/>
-
-          <hr />
-
-          {/*
-            A <Switch> looks through all its children <Route>
-            elements and renders the first one whose path
-            matches the current URL. Use a <Switch> any time
-            you have multiple routes, but you want only one
-            of them to render at a time
-          */}
-          <Switch>
-            <Route exact path="/" component={LandingPageScreen}/>
-            <Route exact path="/home" component={HomeScreen}/>
-            <Route exact path="/newLobby" component={NewLobbyScreen}/>
-          </Switch>
-      </Router>
+      {
+        !isSignedIn ? 
+          <LandingPageScreen/>
+        :
+          <>
+            <RouterPage/>
+          </>
+      }
     </div>
   );
 }

@@ -16,22 +16,9 @@ function HomeScreen() {
 
     const {isSignedIn, googleUser} = useGoogleAuth();
 
-    if (!isSignedIn) {
-        return (
-            <Container fluid>
-                <Row>
-                    <Col style={{border: "2px solid black"}}>
-                        {historyRouter.push("/")}
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-
     return (
         <Container className="containerBody" fluid>
             {
-                isSignedIn ? 
                     <>
                         <Row>
                             <Col style={{border: "2px solid black", padding: "20px"}}>
@@ -55,8 +42,6 @@ function HomeScreen() {
                         
 
                     </>
-                :
-                    historyRouter.push("/")
             }
         </Container>
     );
