@@ -29,9 +29,7 @@ function App() {
         !isSignedIn ? 
           <LandingPageScreen/>
         :
-          <>
-            <RouterPage/>
-          </>
+          <RouterPage/>
       }
     </div>
   );

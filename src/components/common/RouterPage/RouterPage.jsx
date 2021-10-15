@@ -20,11 +20,11 @@ function RouterPage() {
 
   return (
     <>
-    <NavbarScreen/>
     <Router>
+        <NavbarScreen/>
         <Switch>
-            <Route exact path="/" component={LandingPageScreen}/>
-            <Route exact path="/home" component={HomeScreen}/>
+            <Route exact path="/" component={HomeScreen}/>
+            {/* <Route exact path="/home" component={HomeScreen}/> */}
             <Route exact path="/newLobby" component={NewLobbyScreen}/>
         </Switch>
     </Router>
