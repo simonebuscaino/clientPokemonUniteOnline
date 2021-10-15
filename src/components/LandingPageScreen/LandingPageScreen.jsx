@@ -16,6 +16,7 @@ function LandingPageScreen() {
 
     const {isSignedIn} = useGoogleAuth();
 
+    
     return (
         <Container className="containerBody" style={{textAlign:"center"}} fluid>
             <Row>
@@ -25,13 +26,7 @@ function LandingPageScreen() {
             </Row>
             <Row>
                 <Col>
-                {
-                    !isSignedIn ?
-                        <LoginGoogle/>
-                    :
-                        historyRouter.push("/home")
-                }
-
+                    <LoginGoogle/>
                 </Col>
             </Row>
         </Container>
