@@ -16,47 +16,48 @@ function HomeScreen() {
 
     const {isSignedIn, googleUser} = useGoogleAuth();
 
-    if (isSignedIn) {
+    if (!isSignedIn) {
         return (
-            <Container className="containerBody" fluid>
-                {
-                    isSignedIn ? 
-                        <>
-                            <Row>
-                                <Col style={{border: "2px solid black", padding: "20px"}}>
-                                    <h1>{googleUser.profileObj.name}</h1>
-                                    <img src={googleUser.profileObj.imageUrl} alt="Avatar." />
-                                    <LogoutGoogle/>
-                                </Col>
-                            </Row>
-                            <br/>
-                            <Row>
-                                <Col className="d-grid">
-                                    <Button variant="primary" onClick={() => historyRouter.push("/newLobby")}>Crea un nuovo Lobby</Button>
-                                </Col>
-                            </Row>
-                            <br/>
-                            <Row>
-                                <Col>
-                                    <Lobby/>
-                                </Col>
-                            </Row>
-                            
-
-                        </>
-                    :
-                        historyRouter.push("/")
-                }
+            <Container fluid>
+                <Row>
+                    <Col style={{border: "2px solid black"}}>
+                        {historyRouter.push("/")}
+                    </Col>
+                </Row>
             </Container>
         );
     }
+
     return (
-        <Container fluid>
-            <Row>
-                <Col style={{border: "2px solid black"}}>
-                    {historyRouter.push("/")}
-                </Col>
-            </Row>
+        <Container className="containerBody" fluid>
+            {
+                isSignedIn ? 
+                    <>
+                        <Row>
+                            <Col style={{border: "2px solid black", padding: "20px"}}>
+                                <h1>{googleUser.profileObj.name}</h1>
+                                <img src={googleUser.profileObj.imageUrl} alt="Avatar." />
+                                <LogoutGoogle/>
+                            </Col>
+                        </Row>
+                        <br/>
+                        <Row>
+                            <Col className="d-grid">
+                                <Button variant="primary" onClick={() => historyRouter.push("/newLobby")}>Crea un nuovo Lobby</Button>
+                            </Col>
+                        </Row>
+                        <br/>
+                        <Row>
+                            <Col>
+                                <Lobby/>
+                            </Col>
+                        </Row>
+                        
+
+                    </>
+                :
+                    historyRouter.push("/")
+            }
         </Container>
     );
     
