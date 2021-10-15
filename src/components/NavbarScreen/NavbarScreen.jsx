@@ -21,7 +21,7 @@ function NavbarScreen() {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand href="#home">Pokèmon Unite Online</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,7 +29,7 @@ function NavbarScreen() {
                         {/* <LinkContainer to="/">
                             <Nav.Link>Landing Page</Nav.Link>
                         </LinkContainer> */}
-                        <LinkContainer to="/home">
+                        <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
                         {/* <Nav.Link href="#pricing">Pricing</Nav.Link>
