@@ -21,14 +21,14 @@ function HomeScreen() {
         <Container className="containerBody" fluid>
             {
                     <>
-                        <Row>
+                        {/* <Row>
                             <Col style={{border: "2px solid black", padding: "20px"}}>
                                 <h1>{googleUser.profileObj.name}</h1>
                                 <img src={googleUser.profileObj.imageUrl} alt="Avatar." />
                                 <LogoutGoogle/>
                             </Col>
                         </Row>
-                        <br/>
+                        <br/> */}
                         <Row>
                             <Col className="d-grid">
                                 <Button variant="primary" onClick={() => historyRouter.push("/newLobby")}>Crea un nuovo Lobby</Button>

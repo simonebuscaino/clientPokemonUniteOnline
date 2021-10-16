@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {useState} from "react";
-import {Container, Row, Col, Button, Navbar, Nav, NavDropdown} from "react-bootstrap";
+import {Container, Row, Col, Button, Navbar, Nav, NavDropdown, Image} from "react-bootstrap";
 // import {GoogleLogin, GoogleLogout} from "react-google-login";
 import { useGlobalContext } from "../../context";
 import LoginGoogle from "../common/LoginGoogle/LoginGoogle";
@@ -18,6 +18,10 @@ function NavbarScreen() {
 
     const {isSignedIn, googleUser, signOut} = useGoogleAuth();
 
+    function logout() {
+        signOut();
+        historyRouter.push("/");
+    }
    
     return (
         <Row className="navbarContainer">
@@ -58,12 +62,15 @@ function NavbarScreen() {
             </Col>
             <Col md="3" className="containerUser">
                 <Row>
-                    <Col sm="10" style={{margin:"auto"}}>
-                        <h5 className="fontWeightNormal">{googleUser.profileObj.name}</h5>
-                        <h6 className="fontWeightNormal">{googleUser.profileObj.email}</h6>
+                    <Col sm="3">
+                        <Image src={googleUser.profileObj.imageUrl} width="55px" height="auto" roundedCircle />
+                    </Col>
+                    <Col sm="7" style={{margin:"auto"}}>
+                        <h6 className="fontWeightNormal" style={{marginBottom: "5px"}}>{googleUser.profileObj.name}</h6>
+                        <p className="fontWeightNormal" style={{fontSize:"14px", marginBottom: "5px"}}>{googleUser.profileObj.email}</p>
                     </Col>
                     <Col sm="2" style={{margin:"auto"}}>
-                        <Icon.BoxArrowLeft onClick={signOut} size="30" style={{cursor: "pointer"}} />
+                        <Icon.BoxArrowLeft onClick={()=>logout()} size="30" style={{cursor: "pointer"}} />
                     </Col>
                 </Row>
                 
