@@ -1,7 +1,8 @@
+import React from "react";
 import axios from "axios";
 import {useState} from "react";
 import {Container, Row, Col, Button, Card} from "react-bootstrap";
-import {GoogleLogin, GoogleLogout} from "react-google-login";
+// import {GoogleLogin, GoogleLogout} from "react-google-login";
 import { useGlobalContext } from "../../../context";
 // import LoginGoogle from "../../common/LoginGoogle/LoginGoogle";
 // import LogoutGoogle from "../../common/LogoutGoogle/LogoutGoogle";
