@@ -82,7 +82,7 @@ function NewLobbyScreen() {
             </Form.Group>
 
             {
-              modalitaAccesso !== "" ?
+              modalitaAccesso === "Privato" ?
                 <Form.Group as={Col} md="4" controlId="validationCustom01" className="mt-3">
                   <Form.Label>Parola segreta di accesso *</Form.Label>
                   <Form.Control
