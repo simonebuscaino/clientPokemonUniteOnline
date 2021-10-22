@@ -34,6 +34,7 @@ function NewLobbyScreen() {
     const [codiceSegretoLobby, setCodiceSegretoLobby] = useState();
     const [parolaSegretaAccesso, setParolaSegretaAccesso] = useState("");
     const [modalitaAccesso, setModalitaAccesso] = useState("");
+    const [tipoDiLobby, setTipoDiLobby] = useState("");
     const [nomeLobby, setNomeLobby] = useState("");
     const [numGiocatori, setNumGiocatori] = useState();
 
@@ -66,6 +67,20 @@ function NewLobbyScreen() {
                 }}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="formGridState" className="mt-3">
+              <Form.Label>Tipo di Lobby *</Form.Label>
+              <Form.Select
+                required
+                onChange={(e) => {
+                  setTipoDiLobby(e.target.value);
+                }}
+              >
+                <option></option>
+                <option value="Ranked">Ranked</option>
+                <option value="Standard">Standard</option>
+                <option value="Standard">Quick</option>
+                </Form.Select>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="formGridState" className="mt-3">
               <Form.Label>Modalità di accesso *</Form.Label>
