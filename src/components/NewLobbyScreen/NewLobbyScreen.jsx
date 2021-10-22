@@ -18,14 +18,21 @@ function NewLobbyScreen() {
         event.preventDefault();
         event.stopPropagation();
         console.log("Riuscito");
-        // let json = {
-        //     nome: nome,
-        //     cognome: cognome,
-        // }
-        // axios.post("https://pokemonuniteonlinedb.herokuapp.com/create",{
-        //     nome:nome, 
-        //     cognome:cognome
-        // });
+        let json = {
+            name: nomeLobby,
+            lobbyCode: codiceSegretoLobby,
+            typeOfAccess: modalitaAccesso,
+            secretCode: parolaSegretaAccesso,
+            typeOfLobby: tipoDiLobby,
+            nPlayers: numGiocatori,
+        }
+        axios.post("https://pokemonuniteonlinedb.herokuapp.com/create", json)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       }
   
       setValidated(true);
